@@ -1,6 +1,6 @@
 document.body.style.backgroundImage="url('img1.jpg')";
-document.querySelector('.card-content').style.backgroundImage="url('img2.jpg')";
-document.querySelector('.card-action').style.backgroundImage="url('img2.jpg')";
+// document.querySelector('.card-content').style.backgroundImage="url('img2.jpg')";
+// document.querySelector('.card-action').style.backgroundImage="url('img2.jpg')";
 //Define UI vars
 const form=document.querySelector('#task-form');
 const taskList=document.querySelector('.collection');
