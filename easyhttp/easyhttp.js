@@ -1,3 +1,5 @@
+//Custom library
+
 function easyHTTP() {
     this.http=new XMLHttpRequest();
 }
