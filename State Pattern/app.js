@@ -1,18 +1,18 @@
 const PageState=function() {
-    let currentState=new homeState(this);
+    let currentState;//=homeState();
 
     this.init=function() {
-        this.change(new homeState);
+        this.change(homeState);
     }
 
     this.change=function(state) {
-        currentState=state;
+        currentState=state.call();
     }
 }
 
 //Home State
 
-const homeState=function(page) {
+const homeState=function() {
     document.querySelector('#heading').textContent=null;
     document.querySelector('#content').innerHTML=`
     
@@ -27,7 +27,7 @@ const homeState=function(page) {
 }
 //about state
 
-const aboutState=function(page) {
+const aboutState=function() {
     document.querySelector('#heading').textContent='About Us';
     document.querySelector('#content').innerHTML=`
     <p>This is the about page<p>
@@ -36,7 +36,7 @@ const aboutState=function(page) {
 
 //contact state
 
-const contactState=function(page){
+const contactState=function(){
     document.querySelector('#heading').innerHTML='Contact Us';
     document.querySelector('#content').innerHTML=`
     <form>
@@ -71,19 +71,19 @@ const home=document.getElementById('home'),
 //home
 
 home.addEventListener('click',(e) =>{
-    page.change(new homeState);
+    page.change(homeState);
     e.preventDefault();
 
 });
 
 about.addEventListener('click',(e) =>{
-    page.change(new aboutState);
+    page.change(aboutState);
     e.preventDefault();
 
 });
 
 contact.addEventListener('click',(e) =>{
-    page.change(new contactState);
+    page.change(contactState);
     e.preventDefault();
 
 })
